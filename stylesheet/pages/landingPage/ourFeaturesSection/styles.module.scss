@@ -1,0 +1,9 @@
+@import "stylesheet/scss/_mixins.scss";
+
+.feature_section_wrapper {
+  @include container();
+}
+
+.feature_section_content {
+  width: 100%;
+}

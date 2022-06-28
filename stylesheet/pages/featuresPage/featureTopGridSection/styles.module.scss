@@ -1,0 +1,50 @@
+@use "stylesheet/scss/_variables.scss" as vars;
+@import "stylesheet/scss/_mixins.scss";
+
+.feature_top_grid_section {
+  margin-top: vars.$page_first_section_margin_top;
+  position: relative;
+  z-index: 1;
+
+  .hero_image_wrapper {
+    width: 100%;
+    height: 300px;
+    position: relative;
+    background-image: url("/images/feature-page-hero-image.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .feature_cards_container {
+    box-shadow: inset 0px 4px 6px #00000029, 0px 10px 20px #a7a7a729;
+    background: #e0e0e0;
+
+    .feature_card {
+      background-color: vars.$white;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+
+      h3 {
+        margin-bottom: 5px !important;
+      }
+
+      .icon_wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 13px;
+        background-color: vars.$dim_blue;
+        border-radius: 50%;
+        margin-bottom: 12px;
+      }
+
+      p {
+        @include font-size-variant("xsmall");
+      }
+    }
+  }
+}

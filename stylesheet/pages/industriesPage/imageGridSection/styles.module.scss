@@ -1,0 +1,42 @@
+@use "stylesheet/scss/_variables.scss" as vars;
+@import "stylesheet/scss/_mixins.scss";
+
+.industries_image_grid_section_wrapper {
+  margin-top: vars.$page_first_section_margin_top;
+  .industry_card {
+    box-shadow: 0px 10px 20px vars.$card_box_shadow_color;
+    background-color: vars.$white;
+    cursor: pointer;
+
+    .industry_main_image_container {
+      height: 250px;
+      position: relative;
+    }
+    .industry_card_content {
+      padding: 25px 24px;
+
+      .industry_card_icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: vars.$dim_blue;
+        box-shadow: 0px 3px 6px vars.$icon_box_shadow_color;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        margin-bottom: 15px;
+      }
+
+      h3 {
+        margin-bottom: 0 !important;
+        font-weight: vars.$font_weight_bold !important;
+        white-space: nowrap;
+      }
+
+      p {
+        @include font-size-variant("medium");
+      }
+    }
+  }
+}

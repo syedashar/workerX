@@ -1,0 +1,97 @@
+// rotate toward right side and show different shapes
+@keyframes rotateRight180 {
+  0% {
+    border-radius: 10px;
+    transform: rotate(0deg);
+  }
+  20% {
+    border-radius: 25%;
+    transform: rotate(45deg);
+  }
+  40% {
+    border-radius: 10px;
+    transform: rotate(180deg);
+  }
+  60% {
+    border-radius: 10px;
+    transform: rotate(180deg);
+  }
+  80% {
+    border-radius: 50%;
+    transform: rotate(270deg);
+  }
+  100% {
+    border-radius: 10px;
+    transform: rotate(360deg);
+  }
+}
+
+// rotate toward left side and show different shapes
+@keyframes rotateLeft180 {
+  0% {
+    border-radius: 10%;
+    transform: rotate(-90deg);
+  }
+  20% {
+    border-radius: 10px;
+    transform: rotate(-180deg);
+  }
+  40% {
+    border-radius: 10px;
+    transform: rotate(-180deg);
+  }
+  60% {
+    border-radius: 25%;
+    transform: rotate(-125deg);
+  }
+  80% {
+    border-radius: 50%;
+    transform: rotate(-180deg);
+  }
+  100% {
+    border-radius: 10px;
+    transform: rotate(0deg);
+  }
+}
+
+// create a circular motion
+@keyframes circular-motion {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+// fadeIn
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.rotate-right-180 {
+  transition: all 1s ease;
+  border: 5px solid $black !important;
+  animation: rotateRight180 5s infinite;
+}
+
+.rotate-left-180 {
+  transition: all 1s ease;
+  border: 5px solid $light_grey !important;
+  animation: rotateLeft180 5s infinite;
+}
+
+.circulating {
+  transition: none;
+  animation: circular-motion 50s infinite linear;
+}
+.fade-in {
+  opacity: 0;
+  transition: all 1s ease;
+  animation: fadeIn 5s forwards;
+}

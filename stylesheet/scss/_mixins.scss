@@ -1,0 +1,185 @@
+@import "variables.scss";
+
+// hover effect
+
+@mixin hover($color) {
+  transition: all 0.3s ease;
+  &:hover {
+    color: $color;
+    transition: all 0.3s ease;
+  }
+}
+
+// unselectable
+
+@mixin unselectable() {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+// container mixins
+
+@mixin container() {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+
+  @media (min-width: 476px) {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  @media (min-width: 768px) {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  @media (min-width: 992px) {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  @media (min-width: 1200px) {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  @media (min-width: 476px) {
+    width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    width: 800px;
+    max-width: 100%;
+  }
+
+  @media (min-width: 992px) {
+    width: 960px;
+    max-width: 100%;
+  }
+
+  @media (min-width: 1200px) {
+    width: 1140px;
+    max-width: 100%;
+  }
+
+  @media (min-width: 1400px) {
+    width: 1340px;
+    max-width: 100%;
+  }
+}
+
+// button mixin
+
+@mixin button-variant($type: "", $width: "", $color: "") {
+  @if $type == "primary" {
+    background: $btn-primary-bg;
+    color: $btn-primary-text;
+    &:hover {
+      background: darken($btn-primary-bg, 10%);
+    }
+  }
+  @if $type == "secondary" {
+    background: $btn-secondary-bg;
+    color: $btn-secondary-text;
+    &:hover {
+      background: darken($btn-secondary-bg, 10%);
+    }
+  }
+
+  @if $type == "dark" {
+    background: $btn-dark-bg;
+    color: $btn-dark-text;
+    &:hover {
+      background: darken($btn-dark-bg, 10%);
+    }
+  }
+  @if $type == "default" {
+    background: $btn-default-bg;
+    color: $btn-default-text;
+    &:hover {
+      background: darken($btn-default-bg, 10%);
+    }
+  }
+
+  border: 0;
+  font-size: $font_size_small;
+  padding: 15px 22px;
+  transition: 0.2s ease-in-out;
+  flex-shrink: 0;
+  transition-property: color, background-color, border;
+
+  @if $width == "full" {
+    width: 100%;
+  }
+}
+
+@mixin font-size-variant($size: "") {
+  @if $size == "xlarge" {
+    font-size: $font_size_xlarge;
+  }
+  @if $size == "xxlarge" {
+    font-size: $font_size_xxlarge;
+  }
+  @if $size == "xxxlarge" {
+    font-size: $font_size_xxxlarge;
+  }
+  @if $size == "medium" {
+    font-size: $font_size_medium;
+  }
+  @if $size == "small" {
+    font-size: $font_size_small;
+  }
+  @if $size == "xsmall" {
+    font-size: $font_size_xsmall;
+    line-height: 1.5;
+  }
+}
+
+// margin between sections
+
+@mixin section-margin($margin: "default") {
+  @if $margin == "default" {
+    margin-top: $section_margin_top;
+  }
+  @if $margin == "half" {
+    margin-top: $section_half_margin_top;
+  }
+
+  @if $margin == "none" {
+    margin-top: 0;
+  }
+}
+
+// subtle Text
+
+@mixin subtle-text($font-size: $font_size_xsmall) {
+  font-size: $font_size_xsmall;
+  color: $subtle_text_color;
+}
+
+// active link mixin based on page
+
+@mixin active-link($from: "") {
+  &:before {
+    opacity: 1;
+  }
+  @if $from == "home" {
+    font-weight: $font_weight_regular;
+    color: $primary_color;
+  }
+  @if $from == "sidebar" {
+    font-weight: $font_weight_regular;
+    color: $primary_color;
+  }
+  @if $from == "" {
+    color: $white;
+  }
+}

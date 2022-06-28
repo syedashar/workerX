@@ -1,0 +1,9 @@
+export { default as HeroSection } from "./heroSection";
+export { default as MainThingsSection } from "./mainThingsSection";
+export { default as OurFeaturesSection } from "./ourFeatureSection";
+export { default as OnlineBookingSection } from "./onlineBookingSection";
+export { default as DownloadAppSection } from "./downloadAppSection";
+export { default as PricingSection } from "./pricingSection";
+export { default as TestimonialsSection } from "./testimonialsSection";
+export { default as FaqsSection } from "./faqsSection";
+export { default as VideoOverviewSection } from "./videoOverview";

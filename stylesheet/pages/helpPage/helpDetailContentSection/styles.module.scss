@@ -1,0 +1,25 @@
+@use "stylesheet/scss/_variables.scss" as vars;
+
+.help_detail_content_section_wrapper {
+  margin-top: vars.$page_first_section_margin_top;
+  position: relative;
+  z-index: 1;
+
+    .help_video_container {
+      display: flex;
+      justify-content:center;
+      height: 392px;
+      width: 100%;
+      position: relative;
+      padding: 24px;
+      display: flex;
+
+      iframe {
+        width: 80%;
+      
+      }
+    }
+
+  
+  
+}

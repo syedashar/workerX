@@ -1,0 +1,22 @@
+@import "stylesheet/scss/_mixins.scss";
+
+.online_booking_section_wrapper {
+  @include container();
+
+  .image_wrapper {
+    width: 85%;
+    height: 100%;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  // margin auto in mobile
+
+  @media (max-width: 767px) {
+    .image_wrapper {
+      margin: 0 auto;
+    }
+  }
+}

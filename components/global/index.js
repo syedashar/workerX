@@ -1,0 +1,12 @@
+export {default as Header} from "./header";
+export {default as Button} from "./button";
+export {default as ColoredHeading} from "./coloredHeading";
+export {default as SectionHeading} from "./sectionHeading";
+export {default as GridDesignLayout} from "./gridDesignLayout";
+export {default as PricingGrid} from "./pricingGrid";
+export {default as TrialFooter} from "./trialFooter";
+export {default as Footer} from "./footer";
+export {default as HalfBlueBackground} from "./halfBlueBackground";
+export {default as HeadingWithIconSection} from "./headingWithIconSection";
+export {default as BackButton} from "./backButton";
+export {default as PricingPageBottomSection} from "./pricingPageBottomSection";

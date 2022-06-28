@@ -1,0 +1,23 @@
+@use "stylesheet/scss/variables.scss" as vars;
+@import "stylesheet/scss/mixins.scss";
+
+.hero_section_wrapper {
+  height: calc(100vh - vars.$header-height);
+  padding: 50px 0;
+  @include container();
+
+  .section_row {
+    height: 100%;
+
+    .intro_section_col {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .hero_section_wrapper {
+    height: fit-content;
+  }
+}

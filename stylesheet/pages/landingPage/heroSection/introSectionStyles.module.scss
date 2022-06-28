@@ -1,0 +1,13 @@
+@use "stylesheet/scss/variables.scss" as vars;
+
+.wrapper {
+  .input_btn_wrapper {
+    display: flex;
+    column-gap: 18px;
+    row-gap: 5px;
+
+    input {
+      max-width: 276px;
+    }
+  }
+}

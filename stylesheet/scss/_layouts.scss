@@ -1,0 +1,421 @@
+@use "variables" as vars;
+
+// header
+
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 99999;
+  background-color: $primary_color;
+  box-shadow: 0px 3px 6px #95959529;
+  transition: 0.3s all;
+
+  .header_wrapper {
+    height: vars.$header-height;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include container();
+  }
+
+  .hamburger_icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    background-color: $white;
+    svg {
+      color: $primary_color;
+      path {
+        color: $primary_color;
+      }
+    }
+  }
+
+  .company_logo {
+    height: 24px;
+    width: 175px;
+    background-size: contain;
+    background-position-y: center;
+    background-repeat: no-repeat;
+    background-image: url("/images/all-white-logo.png");
+  }
+
+  .navlinks_wrapper {
+    background-color: transparent;
+    display: inline-flex;
+    gap: 60px;
+    align-items: center;
+
+    .link_wrapper {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+
+      > svg {
+        path {
+          stroke: $white;
+        }
+      }
+      a {
+        color: $white;
+        font-size: vars.$font_size_small;
+        &:before {
+          width: 6px;
+          height: 6px;
+          margin-right: 10px;
+          opacity: 0;
+          content: "";
+          position: absolute;
+          left: -10px;
+          top: calc(50% - 3px);
+          border-radius: 50%;
+          transition: 0.3s opacity ease-in-out;
+          background-color: $white;
+        }
+
+        &:hover {
+          @include active-link("");
+        }
+      }
+      &.active {
+        a {
+          @include active-link("");
+        }
+      }
+
+      .submenu_wrapper {
+        width: 200px;
+        position: absolute;
+        top: 23px;
+        right: 0;
+        z-index: 99999;
+        background-color: $white;
+        box-shadow: 0px 10px 20px #86868650;
+        padding: 0 16px;
+        display: flex;
+        flex-direction: column;
+
+        .submenu_link_wrapper {
+          display: flex;
+          gap: 10px;
+          padding: 16px 0;
+          cursor: pointer;
+          user-select: none;
+          border-bottom: 1px solid $seperator_color;
+
+          &:last-child {
+            border-bottom: none;
+          }
+
+          .submenu_link_icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: $secondary_color;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+          }
+          .submenu_link_texts_wrapper {
+            display: flex;
+            flex-direction: column;
+
+            .title {
+              @include font-size-variant("xsmall");
+              color: $black;
+            }
+            .subtle_desc {
+              @include subtle-text("xsmall");
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.header.white {
+  background-color: $white;
+  .company_logo {
+    background-image: url("/svgs/workerx-logo-images.svg");
+  }
+  .navlinks_wrapper {
+    .link_wrapper {
+      > svg {
+        path {
+          stroke: $black;
+        }
+      }
+      a {
+        color: $black;
+        &:before {
+          background-color: $primary_color;
+        }
+        &:hover {
+          @include active-link("home");
+        }
+      }
+      &.active {
+        a {
+          @include active-link("home");
+        }
+      }
+    }
+  }
+
+  .hamburger_icon {
+    background-color: $primary_color;
+
+    svg {
+      fill: $white;
+    }
+  }
+}
+
+.header.page_top {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+// mobile sidebar
+
+.sidebar {
+  position: fixed;
+  height: 100%;
+  right: 0;
+  top: 0;
+  z-index: 99999;
+  overflow-x: hidden;
+  background-color: $white;
+  padding-bottom: $sidebar_padding_bottom;
+
+  display: flex;
+  flex-direction: column;
+  -moz-box-shadow: -3px 0 5px 0 #555;
+  -webkit-box-shadow: -3px 0 5px 0 #555;
+  box-shadow: -3px 0 5px 0 rgba(143, 143, 143, 0.1);
+
+  .sub_menu {
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+
+    .link_wrapper {
+      .link {
+        font-size: $font_size_small !important;
+      }
+      &:last-child {
+        border-bottom: none !important;
+      }
+    }
+  }
+
+  .header_wrapper {
+    padding: 35px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $secondary_color;
+
+    .sidebar_title {
+      background-image: url('/svgs/workerx-logo-images.svg');
+      width: 130px;
+      height: 20px;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+  .sidebar_cross_icon {
+    cursor: pointer;
+    svg {
+      path {
+        stroke: $primary_color;
+      }
+    }
+  }
+
+  .sidebar_inner_content {
+    padding: 0 $sidebar_padding_left_right;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+
+    .links_wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 30px;
+
+      .link_wrapper {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 10px 0;
+        border-bottom: 1px solid $seperator_color;
+
+        .link_icon {
+          svg {
+            width: 25px;
+          }
+        }
+
+        .arrow_black {
+          transition: 0.3s all;
+          margin-left: auto;
+          cursor: pointer;
+
+          svg {
+            height: 10px;
+            width: 10px;
+            path {
+              stroke: $black;
+            }
+          }
+        }
+
+        .arrow_black.up {
+          transform: rotate(180deg);
+        }
+
+        &.active {
+          > a {
+            &:first-child {
+              @include active-link("sidebar");
+            }
+          }
+        }
+      }
+
+      .link {
+        text-transform: capitalize;
+        color: $black;
+        font-size: $font_size_xlarge;
+        margin-bottom: 0;
+        cursor: pointer;
+        transition: 0.3s color ease-in-out;
+        position: relative;
+
+        &:hover {
+          color: $primary_color;
+
+          &:before {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+// main
+
+main {
+  padding-top: vars.$header-height;
+  min-height: calc(100vh - vars.$header-height);
+}
+
+// footer
+
+.footer {
+  padding: 41px 0 24px 0;
+  background-image: url("/images/footer.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  .descriptive_section {
+    .logo {
+      height: 24px;
+      width: 175px;
+      background-size: contain;
+      background-position-y: center;
+      background-repeat: no-repeat;
+      background-image: url("/images/company-logo-white.png");
+    }
+    p {
+      max-width: 270px;
+      margin-top: 22px;
+    }
+  }
+
+  a,
+  p {
+    font-size: $font_size_small;
+    color: $footer_text_color;
+    margin-top: 0;
+    margin-bottom: 0;
+    width: fit-content;
+  }
+
+  a {
+    &:hover {
+      color: $primary_color;
+    }
+  }
+
+  .footer_link_section {
+    display: flex;
+    flex-direction: column;
+    span {
+      font-size: $font_size_base;
+      color: $white;
+      font-weight: $font_weight_bold;
+      margin-bottom: 20px;
+    }
+    .footer_links_wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .social_links_wrapper {
+      display: flex;
+      gap: 15px;
+
+      span {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .footer_bottom_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 60px;
+
+    div {
+      display: flex;
+      gap: 66px;
+    }
+  }
+  // reduce fotter bottom gap on mobile
+  @media (max-width: $screen-xs-min) {
+    .footer_bottom_wrapper {
+      div {
+        gap: 30px;
+      }
+    }
+  }
+}
+
+// half blue bg
+
+.half_blue_bg {
+  background-color: $primary_color;
+  height: 60vh;
+  max-height: 500px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 0;
+}

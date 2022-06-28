@@ -1,0 +1,18 @@
+@use "stylesheet/scss/variables.scss" as vars;
+
+.download_app_section {
+  padding-top: 49px;
+  padding-bottom: 49px;
+  background-color: vars.$secondary_color;
+
+  .image_wrapper {
+    height: 500px;
+  }
+
+  .content_container {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+  }
+}

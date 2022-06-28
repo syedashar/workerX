@@ -1,0 +1,44 @@
+@use "stylesheet/scss/variables.scss" as vars;
+
+.testimonials_section_wrapper {
+  padding: 67px 0 70px 0;
+
+  .testimonial_slider_wrapper {
+    margin: 80px 0;
+
+    .testimonial_card {
+      padding: 24px 24px 24px 24px;
+
+      .testimonial_card_header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .profile_icon_wrapper {
+          position: relative;
+        }
+
+        .profile_labels_wrapper {
+          display: flex;
+          flex-direction: column;
+          .name {
+            font-size: vars.$font_size_xlarge;
+            font-weight: vars.$font_weight_semi_bold;
+          }
+          .designation {
+            font-size: vars.$font_size_small;
+            font-weight: vars.$font_weight_light;
+          }
+        }
+      }
+      .comment_wrapper {
+        margin-top: 20px;
+        .comment {
+          font-size: vars.$font_size_small;
+          font-weight: vars.$font_weight_light;
+          line-height: 30px;
+        }
+      }
+    }
+  }
+}

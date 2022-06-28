@@ -1,0 +1,93 @@
+// main theme colors
+$primary_color: #0058fb;
+$secondary_color: #f2f5ff;
+
+// colors
+$black: #0a0a0a;
+$black-2: #000515;
+$white: #ffffff;
+$light_grey: #898989;
+$lighter_grey: #bebebe;
+$dim_blue: #e2e9ff;
+$off_white: #fafafa;
+$footer_text_color: #b5b5b5;
+
+// font sizes
+$font_size_base: 18px;
+$font_size_xlarge: 18px;
+$font_size_xxlarge: 24px;
+$font_size_xxxlarge: 36px;
+$font_size_medium: 16px;
+$font_size_small: 14px;
+$font_size_xsmall: 12px;
+
+// font weights
+$font_weight_bold: 700;
+$font_weight_semi_bold: 600;
+$font_weight_medium: 500;
+$font_weight_regular: 400;
+$font_weight_light: 300;
+
+// text colors
+$text_color_primary: $white;
+$text_color_secondary: $light_grey;
+$nav_link_color: $white;
+$subtle_text_color: $light_grey;
+
+// buttons
+$btn-primary-bg: $primary_color;
+$btn-secondary-bg: $secondary_color;
+$btn-dark-bg: $black-2;
+$btn-default-bg: $white;
+
+$btn-primary-text: $white;
+$btn-secondary-text: $primary_color;
+$btn-dark-text: $white;
+$btn-default-text: $primary_color;
+
+// header height
+$header-height: 80px;
+
+// colored heading
+
+$colored_heading_bg: $dim_blue;
+
+// section margin
+
+$section_margin_top: 126px;
+$section_half_margin_top: $section_margin_top / 2;
+$page_first_section_margin_top: 7vh;
+
+// screen breakpoints
+
+$screen-xs-min: 480px;
+$screen-sm-min: 768px;
+$screen-md-min: 992px;
+$screen-lg-min: 1200px;
+$screen-xl-min: 1600px;
+
+// card
+
+$card_bg_color: #f7f7f7;
+$card_box_shadow_color: #9d9d9d29;
+
+// seperator color
+
+$seperator_color: #ededed;
+
+// accordion bg color
+
+$accordion_bg_color: #fafafa;
+
+// footer margin bottom
+
+$footer_margin_bottom: 126px;
+
+// sidebar padding
+
+$sidebar_padding_bottom: 15px;
+$sidebar_padding_left_right: 25px;
+
+// icon shadow
+
+$icon_box_shadow_color: #c4d2ff;

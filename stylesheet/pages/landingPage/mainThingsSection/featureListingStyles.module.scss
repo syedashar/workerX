@@ -1,0 +1,64 @@
+@use "../../../scss/variables" as vars;
+@import "../../../scss/mixins";
+
+.feature_listing_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-top: 40px;
+
+  .feature_card {
+    position: relative;
+    max-width: 450px;
+    height: 100px;
+    min-height: 100px;
+
+    .rounded_icon_container {
+      position: absolute;
+      left: -35px;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background-color: vars.$primary_color;
+      padding: 5px;
+      top: calc(50% - 35px);
+      z-index: 1;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .text_wrapper {
+      height: 100%;
+      padding: 17px 38px 17px 51px;
+      background-color: white;
+
+      h3 {
+        margin-bottom: 4px;
+        color: vars.$primary_color;
+      }
+
+      p {
+        @include font-size-variant("xsmall");
+        margin-bottom: 0;
+      }
+    }
+  }
+  @media screen and (max-width: 992px) and (min-width: 768px) {
+    .feature_card {
+      height: 115px;
+    }
+  }
+  @media screen and (max-width: 425px) {
+    .feature_card {
+      height: 115px;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .feature_listing_wrapper {
+    padding-left: 35px;
+    padding-top: 0;
+  }
+}

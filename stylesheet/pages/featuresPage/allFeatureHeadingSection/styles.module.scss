@@ -1,0 +1,22 @@
+@use "stylesheet/scss/_variables.scss" as vars;
+
+.all_feature_heading_section {
+  margin-top: vars.$section_half_margin_top;
+
+  .image_wrapper {
+    background-image: url("/images/feature-page-heading-image.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 350px;
+    height: 300px;
+  }
+
+  // reduce image size on mobile
+
+  @media (max-width: vars.$screen-sm-min) {
+    .image_wrapper {
+      width: 250px;
+      height: 150px;
+    }
+  }
+}

@@ -1,0 +1,400 @@
+// button
+
+.btn-primary {
+  @include button-variant($type: "primary");
+}
+.btn-primary-full-width {
+  @include button-variant($type: "primary", $width: "full");
+}
+.btn-secondary {
+  @include button-variant($type: "secondary");
+}
+.btn-secondary-full-width {
+  @include button-variant($type: "secondary", $width: "full");
+}
+.btn-dark {
+  @include button-variant($type: "dark");
+}
+.btn-dark-full-width {
+  @include button-variant($type: "dark", $width: "full");
+}
+.btn-default {
+  @include button-variant($type: "default");
+}
+.back_button {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  text-transform: capitalize;
+  cursor: pointer;
+  user-select: none;
+  margin-bottom: 20px;
+
+  span {
+    font-weight: $font_weight_medium;
+    color: $white;
+  }
+}
+
+// colored heading
+
+.colored_heading {
+  padding: 9px 12px;
+  color: $primary_color;
+  font-size: $font_size_base;
+  background-color: $colored_heading_bg;
+  margin-bottom: 10px;
+  display: block;
+  width: fit-content;
+}
+
+// primary input field
+
+.primary_input_field {
+  height: 52px;
+  background-color: $secondary_color;
+  border: 0;
+  padding: 0 10px;
+  width: 100%;
+
+  &::placeholder {
+    color: $black;
+    font-size: $font_size_medium;
+  }
+}
+
+// section heading
+
+.section_heading_wrapper {
+  position: relative;
+  z-index: 2;
+
+  mark {
+    background-color: transparent;
+    color: $primary_color;
+    padding: 0;
+  }
+}
+.section_heading_wrapper.white {
+  h1,
+  p {
+    color: $white;
+  }
+}
+
+.section_heading_wrapper.centered {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+// grid design layout
+
+.grid_design_layout_wrapper {
+  .grid_descriptive_wrapper {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 500px;
+    align-items: flex-start;
+
+    .grid_icon_container {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px;
+      width: 60px;
+      height: 60px;
+      background-color: $dim_blue;
+      border-radius: 50%;
+      margin-bottom: 12px;
+      box-shadow: 0px 3px 6px $icon_box_shadow_color;
+    }
+  }
+
+  .image_wrapper {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    position: relative;
+  }
+
+  .image_wrapper.flex_start {
+    justify-content: flex-start;
+  }
+  .image_wrapper.flex_end {
+    justify-content: flex-end;
+  }
+  .image_wrapper.center {
+    justify-content: center;
+  }
+}
+
+// pricing card
+
+.pricing_grid_wrapper {
+  .pricing_card_wrapper {
+    background-color: $white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 29px 10px 24px 10px;
+    box-shadow: 0 10px 20px $card_box_shadow_color;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+
+    .pricing_card_header {
+      text-align: center;
+      p,
+      h1 {
+        text-align: center;
+        margin: 0 !important;
+      }
+      .interval_text {
+        font-size: $font_size_small;
+      }
+      .discount_price {
+        font-size: small;
+        margin-left: -6px;
+        font-weight: normal;
+      }
+    }
+
+    .desc_text {
+      font-weight: $font_weight_semi_bold;
+      font-size: $font_size_xsmall;
+      line-height: 2;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .card_divider {
+      margin: 5px 0 10px 0;
+    }
+
+    .features_provided_wrapper {
+      display: flex;
+      flex-direction: column;
+      margin-top: 10px;
+      margin-bottom: 30px;
+      gap: 11px;
+
+      .feature {
+        display: flex;
+        gap: 5px;
+
+        svg {
+          margin-right: 5px;
+        }
+
+        p {
+          max-width: 150px;
+          margin: 0;
+          @include font-size-variant("xsmall");
+        }
+      }
+    }
+
+    .pricing_card_btns_wrapper {
+      margin-top: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .recommended_tag {
+      background-image: url("/images/recommended-image.png");
+      background-repeat: no-repeat;
+      width: 110px;
+      height: 120px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 2;
+    }
+
+    .voucher {
+      font-family: "Roboto", sans-serif;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+
+      text-align: center;
+      .vc {
+        background: #d8f2e6;
+        border-radius: 30px 0 0 30px;
+        color: #47bf8b;
+        font-size: smaller;
+        width: 108px;
+        text-align: center;
+        padding: 6.5px 18px;
+        position: relative;
+        border-right: 1px dashed #fff;
+      }
+      .vc:after {
+        width: 0;
+        height: 0;
+        border: 12.5px solid transparent;
+        position: absolute;
+        content: "";
+        border-top-color: #d8f2e6;
+        right: -26px;
+        top: 0px;
+        border-left-color: #d8f2e6;
+      }
+      .vc:before {
+        width: 0;
+        height: 0;
+        border: 13px solid transparent;
+        position: absolute;
+        content: "";
+        border-bottom-color: #d8f2e6;
+        right: -25px;
+        top: -1px;
+      }
+    }
+  }
+
+  .recommended_pricing_card_wrapper.pricing_card_wrapper {
+    background-color: $primary_color;
+    box-shadow: 0px -6px 6px #1155ef;
+
+    .pricing_card_header,
+    .features_provided_wrapper {
+      * {
+        color: $white;
+      }
+    }
+    svg {
+      fill: $white;
+      path {
+        stroke: $white;
+      }
+    }
+  }
+}
+
+// trial footer
+
+.trial_footer_wrapper {
+  background-image: url("/images/trial-footer.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .trial_footer_container {
+    padding-top: 67px;
+    padding-bottom: 57px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .trial_footer_inner_content {
+    max-width: 550px;
+
+    h1,
+    p {
+      color: $white;
+      text-align: center;
+    }
+
+    .trial_bottom_div {
+      display: flex;
+      gap: 10px;
+    }
+  }
+}
+
+// custom slider
+
+.custom_slider {
+  .slick-dots li.slick-active button:before {
+    color: $primary_color;
+    opacity: 1;
+    transform: scale(1.5);
+  }
+
+  .slick-dots li button:before {
+    color: $dim_blue;
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .slick-dots {
+    bottom: -50px;
+  }
+}
+
+// custom collapse
+
+.ant-collapse {
+  background-color: transparent !important;
+}
+
+.custom_collapse {
+  border: 0 !important;
+  * {
+    border: 0 !important;
+  }
+
+  .ant-collapse-content-box {
+    background-color: $accordion_bg_color;
+  }
+
+  .ant-collapse-item {
+    margin: 15px 0;
+    background-color: $accordion_bg_color;
+
+    p,
+    h3 {
+      margin-bottom: 0;
+    }
+    p {
+      margin-left: 20px;
+    }
+  }
+}
+
+// heading with icon
+
+.heading_with_icon_section_wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: $page_first_section_margin_top;
+  position: relative;
+  z-index: 2;
+  gap: 20px;
+
+  .icon_wrapper {
+    height: 200px;
+    width: 300px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+// custom tabs
+
+.custom_tabs {
+  .ant-tabs-tab {
+    .ant-tabs-tab-btn {
+      color: $lighter_grey !important;
+    }
+  }
+
+  .ant-tabs-tab-active {
+    .ant-tabs-tab-btn {
+      color: $primary_color !important;
+    }
+  }
+}

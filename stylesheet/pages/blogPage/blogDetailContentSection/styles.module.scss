@@ -1,0 +1,143 @@
+@use "stylesheet/scss/_variables.scss" as vars;
+
+.blog_detail_content_section_wrapper {
+  margin-top: vars.$page_first_section_margin_top;
+  position: relative;
+  z-index: 1;
+
+  .blog_read_section_wrapper {
+    .blog_image_container {
+      height: 392px;
+      width: 100%;
+      position: relative;
+      padding: 24px;
+      display: flex;
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      // black overlay before image
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("/images/black-overlay.png");
+        background-repeat: no-repeat;
+        z-index: 1;
+        background-size: cover;
+      }
+
+      .blog_info {
+        display: flex;
+        gap: 5px;
+        margin-top: auto;
+        position: relative;
+        z-index: 2;
+        color: vars.$white;
+        flex-direction: column;
+
+        .read_time,
+        h1,
+        .username {
+          color: vars.$white;
+        }
+        .writer_info {
+          display: flex;
+          gap: 10px;
+          align-items: center;
+        }
+      }
+    }
+    .publish {
+      display: flex;
+      align-items: center;
+      h4 {
+        margin-bottom: 0;
+        font-weight: vars.$font_weight_medium !important;
+      }
+      p {
+        margin-bottom: 0;
+        font-size: 15px;
+        margin-left: 6px;
+      }
+    }
+    .blog_text {
+      margin-top: 20px;
+    }
+  }
+
+  .recent_posts_wrapper {
+    padding: 0 16px;
+    width: 100%;
+    background-color: vars.$card_bg_color;
+
+    .header {
+      padding: 16px 0;
+      border-bottom: 1px solid vars.$seperator_color;
+
+      h3 {
+        margin: 0;
+      }
+    }
+    .post_cards_wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding: 19px 0;
+
+      .post_card {
+        background-color: vars.$white;
+        display: flex;
+        cursor: pointer;
+
+        .post_card_image {
+          height: 85px;
+          width: 25%;
+          position: relative;
+        }
+
+        .post_card_content {
+          width: 75%;
+          display: flex;
+          flex-direction: column;
+          padding: 10px 10px 5px 10px;
+
+          .title {
+            font-size: vars.$font_size_small;
+          }
+
+          .card_footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+
+            .writer_info {
+              display: inline-flex;
+              gap: 7px;
+              align-items: center;
+
+              .writer_name {
+                color: vars.$lighter_grey;
+                font-size: vars.$font_size_xsmall;
+              }
+
+              .writer_image_wrapper {
+                position: relative;
+                width: 30px;
+                height: 30px;
+              }
+            }
+            .read_time {
+              color: vars.$light_grey;
+              font-size: vars.$font_size_xsmall;
+            }
+          }
+        }
+      }
+    }
+  }
+}
